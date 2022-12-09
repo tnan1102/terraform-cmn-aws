@@ -1,7 +1,6 @@
 ### 概要
-
-
-
+* 共通利用するAWSリソースを作成するtfファイル
+* 主にネットワークやセキュリティグループ
 
 ### 利用方法
 1. aws configure list --profile terraform
