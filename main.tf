@@ -36,7 +36,14 @@ terraform {
 module "vpc" {
   source = "./modules/vpc"
 
+  #vpc
   vpc_config = var.cmn_vpc_config
   vpc_tags = var.cmn_vpc_tags
+
+  #internet gateway
   igw_tags = var.cmn_igw_tags
+
+  #public subnet
+  subnet_config = var.cmn_pub_subnet_config
+  subnet_tags = var.cmn_pub_subnet_tags
 }

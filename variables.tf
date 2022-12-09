@@ -15,8 +15,14 @@ variable "cmn_igw_tags" {
   type = map
 }
 
-# subnet
+# public subnet
+variable "cmn_pub_subnet_config" {
+  type = map
+}
 
+variable "cmn_pub_subnet_tags" {
+  type = map
+}
 
 ############################
 # modules/securitygroup

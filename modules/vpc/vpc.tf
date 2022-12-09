@@ -18,3 +18,13 @@ resource "aws_internet_gateway" "cmn-vpc-igw" {
     managed_by = lookup(var.igw_tags, "managed_by")
   }
 }
+resource "aws_subnet" "cmn_pub_subnet" {
+  vpc_id = aws_vpc.cmn-vpc.id
+  cidr_block = lookup(var.subnet_config, "cidr")
+  availability_zone = lookup(var.subnet_config, "az")
+
+  tags = {
+    name = lookup(var.subnet_tags, "name")
+    managed_by = lookup(var.subnet_tags, "managed_by")
+  }
+}

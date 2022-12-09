@@ -13,3 +13,14 @@ cmn_igw_tags = {
   name    = "cmn-vpc-igw"
   managed_by = "terraform"
 }
+
+# subnet
+cmn_pub_subnet_config = {
+  az = "ap-northeast-1a"
+  cidr = "10.0.0.0/24"
+}
+
+cmn_pub_subnet_tags = {
+  name    = "cmn-pub-subnet"
+  managed_by = "terraform"
+}

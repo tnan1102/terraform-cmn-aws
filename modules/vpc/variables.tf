@@ -15,8 +15,14 @@ variable "igw_tags" {
   type = map
 }
 
-# subnet
+# public subnet
+variable "subnet_config" {
+  type = map
+}
 
+variable "subnet_tags" {
+  type = map
+}
 
 ############################
 # modules/securitygroup
