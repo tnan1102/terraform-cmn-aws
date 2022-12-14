@@ -28,3 +28,7 @@ resource "aws_subnet" "cmn_pub_subnet" {
     managed_by = lookup(var.subnet_tags, "managed_by")
   }
 }
+
+output "cmn-vpc_id" {
+  value = aws_vpc.cmn-vpc.id
+}

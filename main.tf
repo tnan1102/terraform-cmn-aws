@@ -47,3 +47,11 @@ module "vpc" {
   subnet_config = var.cmn_pub_subnet_config
   subnet_tags = var.cmn_pub_subnet_tags
 }
+
+module "security-group" {
+  source = "./modules/security-group"
+
+  vpc_id = module.vpc.cmn-vpc_id
+  sg_config = var.sg_config
+  sg_tags = var.sg_tags
+}

@@ -24,3 +24,14 @@ cmn_pub_subnet_tags = {
   name    = "cmn-pub-subnet"
   managed_by = "terraform"
 }
+
+#security group
+sg_config = [
+  { name = "cmn_linux_sg",   port = [ 22 ],      src_ip = [ "0.0.0.0/0" ] },
+  { name = "cmn_windows_sg", port = [ 3389 ],    src_ip = [ "0.0.0.0/0" ] },
+  { name = "cmn_web_sg",     port = [ 80, 443 ], src_ip = [ "0.0.0.0/0" ] }
+]
+
+sg_tags = {
+  managed_by = "terraform"
+}

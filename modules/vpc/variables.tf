@@ -23,7 +23,3 @@ variable "subnet_config" {
 variable "subnet_tags" {
   type = map
 }
-
-############################
-# modules/securitygroup
-############################

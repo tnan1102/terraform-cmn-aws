@@ -27,3 +27,10 @@ variable "cmn_pub_subnet_tags" {
 ############################
 # modules/securitygroup
 ############################
+variable "sg_config" {
+  type = list
+}
+
+variable "sg_tags" {
+  type = map
+}
