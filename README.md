@@ -10,3 +10,10 @@
 3. AWS_PROFILE=terraform terraform plan -var-file=tfvars/terraform.tfvars
 
 4. AWS_PROFILE=terraform terraform apply -var-file=tfvars/terraform.tfvars
+
+### 参考
+* dynamicブロック
+https://cuebic.hatenablog.com/entry/terraform-dynamic
+
+* for_each文
+https://qiita.com/minamijoyo/items/3785cad0283e4eb5a188
