@@ -15,12 +15,14 @@ cmn_igw_tags = {
 }
 
 # subnet
+# { nametag, az, cidr, managed_bytag }
 pub_subnet_config = [
   { name = "cmn-pub-subnet-a", az = "ap-northeast-1a", cidr = "10.0.0.0/24", managed_by = "terraform"},
   { name = "cmn-pub-subnet-c", az = "ap-northeast-1c", cidr = "10.0.1.0/24", managed_by = "terraform"}
 ]
 
 #security group
+# { nametag, port, source ip, managed_bytag }
 sg_config = [
   { name = "cmn_linux_sg",   port = [ 22 ],      src_ip = [ "0.0.0.0/0" ], managed_by = "terraform"},
   { name = "cmn_windows_sg", port = [ 3389 ],    src_ip = [ "0.0.0.0/0" ], managed_by = "terraform"},
