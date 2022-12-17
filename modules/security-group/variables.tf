@@ -8,7 +8,3 @@ variable "vpc_id" {
 variable "sg_config" {
   type = list
 }
-
-variable "sg_tags" {
-  type = map
-}

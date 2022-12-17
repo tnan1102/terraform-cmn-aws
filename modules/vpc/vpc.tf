@@ -4,7 +4,7 @@ resource "aws_vpc" "cmn-vpc" {
   instance_tenancy = "default"
 
   tags = {
-    name = lookup(var.vpc_tags, "name")
+    Name = lookup(var.vpc_tags, "name")
     managed_by = lookup(var.vpc_tags, "managed_by")
   }
 }
@@ -14,18 +14,19 @@ resource "aws_internet_gateway" "cmn-vpc-igw" {
   vpc_id = aws_vpc.cmn-vpc.id
 
   tags = {
-    name = lookup(var.igw_tags, "name")
+    Name = lookup(var.igw_tags, "name")
     managed_by = lookup(var.igw_tags, "managed_by")
   }
 }
-resource "aws_subnet" "cmn_pub_subnet" {
-  vpc_id = aws_vpc.cmn-vpc.id
-  cidr_block = lookup(var.subnet_config, "cidr")
-  availability_zone = lookup(var.subnet_config, "az")
 
+resource "aws_subnet" "pub_subnet" {
+  for_each = { for i in var.pub_subnet_config : i.name => i }
+  vpc_id = aws_vpc.cmn-vpc.id
+  availability_zone = each.value.az
+  cidr_block = each.value.cidr
   tags = {
-    name = lookup(var.subnet_tags, "name")
-    managed_by = lookup(var.subnet_tags, "managed_by")
+    Name = each.value.name
+    managed_by = each.value.managed_by
   }
 }
 

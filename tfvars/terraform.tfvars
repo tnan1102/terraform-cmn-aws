@@ -15,23 +15,15 @@ cmn_igw_tags = {
 }
 
 # subnet
-cmn_pub_subnet_config = {
-  az = "ap-northeast-1a"
-  cidr = "10.0.0.0/24"
-}
-
-cmn_pub_subnet_tags = {
-  name    = "cmn-pub-subnet"
-  managed_by = "terraform"
-}
+pub_subnet_config = [
+  { name = "cmn-pub-subnet-a", az = "ap-northeast-1a", cidr = "10.0.0.0/24", managed_by = "terraform"},
+  { name = "cmn-pub-subnet-c", az = "ap-northeast-1c", cidr = "10.0.1.0/24", managed_by = "terraform"}
+]
 
 #security group
 sg_config = [
-  { name = "cmn_linux_sg",   port = [ 22 ],      src_ip = [ "0.0.0.0/0" ] },
-  { name = "cmn_windows_sg", port = [ 3389 ],    src_ip = [ "0.0.0.0/0" ] },
-  { name = "cmn_web_sg",     port = [ 80, 443 ], src_ip = [ "0.0.0.0/0" ] }
+  { name = "cmn_linux_sg",   port = [ 22 ],      src_ip = [ "0.0.0.0/0" ], managed_by = "terraform"},
+  { name = "cmn_windows_sg", port = [ 3389 ],    src_ip = [ "0.0.0.0/0" ], managed_by = "terraform"},
+  { name = "cmn_web_sg",     port = [ 80, 443 ], src_ip = [ "0.0.0.0/0" ], managed_by = "terraform" }
 ]
 
-sg_tags = {
-  managed_by = "terraform"
-}

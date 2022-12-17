@@ -16,10 +16,6 @@ variable "igw_tags" {
 }
 
 # public subnet
-variable "subnet_config" {
-  type = map
-}
-
-variable "subnet_tags" {
-  type = map
+variable "pub_subnet_config" {
+  type = list
 }

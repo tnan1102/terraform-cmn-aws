@@ -44,8 +44,7 @@ module "vpc" {
   igw_tags = var.cmn_igw_tags
 
   #public subnet
-  subnet_config = var.cmn_pub_subnet_config
-  subnet_tags = var.cmn_pub_subnet_tags
+  pub_subnet_config = var.pub_subnet_config
 }
 
 module "security-group" {
@@ -53,5 +52,4 @@ module "security-group" {
 
   vpc_id = module.vpc.cmn-vpc_id
   sg_config = var.sg_config
-  sg_tags = var.sg_tags
 }

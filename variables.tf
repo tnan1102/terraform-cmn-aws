@@ -16,12 +16,8 @@ variable "cmn_igw_tags" {
 }
 
 # public subnet
-variable "cmn_pub_subnet_config" {
-  type = map
-}
-
-variable "cmn_pub_subnet_tags" {
-  type = map
+variable "pub_subnet_config" {
+  type = list
 }
 
 ############################
@@ -29,8 +25,4 @@ variable "cmn_pub_subnet_tags" {
 ############################
 variable "sg_config" {
   type = list
-}
-
-variable "sg_tags" {
-  type = map
 }

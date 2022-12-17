@@ -13,6 +13,6 @@ resource "aws_security_group" "sg" {
     }
   }
   tags = {
-    managed_by = lookup(var.sg_tags, "managed_by")
+    managed_by = each.value.managed_by
   }
 }
