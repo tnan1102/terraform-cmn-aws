@@ -38,13 +38,15 @@ module "vpc" {
 
   #vpc
   vpc_config = var.cmn_vpc_config
-  vpc_tags = var.cmn_vpc_tags
 
   #internet gateway
-  igw_tags = var.cmn_igw_tags
+  igw_config = var.cmn_igw_config
+
+  # route table
+  pub_rt_config = var.cmn_pub_rt_config
 
   #public subnet
-  pub_subnet_config = var.pub_subnet_config
+  pub_subnet_config = var.cmn_pub_subnet_config
 }
 
 module "security-group" {

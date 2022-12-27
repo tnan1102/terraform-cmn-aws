@@ -6,18 +6,19 @@ variable "cmn_vpc_config" {
   type = map
 }
 
-variable "cmn_vpc_tags" {
+# internet gateway
+variable "cmn_igw_config" {
   type = map
 }
 
-# internet gateway
-variable "cmn_igw_tags" {
+# route table
+variable "cmn_pub_rt_config" {
   type = map
 }
 
 # public subnet
-variable "pub_subnet_config" {
-  type = list
+variable "cmn_pub_subnet_config" {
+  type = map
 }
 
 ############################
