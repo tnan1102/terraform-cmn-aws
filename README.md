@@ -2,6 +2,9 @@
 * 共通利用するAWSリソースを作成するtfファイル
 * 主にネットワークやセキュリティグループ
 
+### 構成図
+![architecture_01](image/architecture.drawio.png)
+
 ### 利用方法
 1. aws configure list --profile terraform
 
